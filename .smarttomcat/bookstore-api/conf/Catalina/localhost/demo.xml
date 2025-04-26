@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Context docBase="/opt/homebrew/Cellar/tomcat/11.0.6/libexec/webapps">
+  <Resources cacheMaxSize="10240">
+    <PreResources base="/Users/chamikabanu/Documents/IdeaProjects/demo/target/classes" className="org.apache.catalina.webresources.DirResourceSet" webAppMount="/WEB-INF/classes"/>
+    <PostResources base="/Users/chamikabanu/.m2/repository/org/glassfish/jersey/containers/jersey-container-servlet/3.1.5/jersey-container-servlet-3.1.5.jar" className="org.apache.catalina.webresources.FileResourceSet" webAppMount="/WEB-INF/lib/jersey-container-servlet-3.1.5.jar"/>
+    <PostResources base="/Users/chamikabanu/.m2/repository/org/glassfish/jersey/containers/jersey-container-servlet-core/3.1.5/jersey-container-servlet-core-3.1.5.jar" className="org.apache.catalina.webresources.FileResourceSet" webAppMount="/WEB-INF/lib/jersey-container-servlet-core-3.1.5.jar"/>
+    <PostResources base="/Users/chamikabanu/.m2/repository/org/glassfish/jersey/core/jersey-common/3.1.5/jersey-common-3.1.5.jar" className="org.apache.catalina.webresources.FileResourceSet" webAppMount="/WEB-INF/lib/jersey-common-3.1.5.jar"/>
+    <PostResources base="/Users/chamikabanu/.m2/repository/org/glassfish/hk2/osgi-resource-locator/1.0.3/osgi-resource-locator-1.0.3.jar" className="org.apache.catalina.webresources.FileResourceSet" webAppMount="/WEB-INF/lib/osgi-resource-locator-1.0.3.jar"/>
+    <PostResources base="/Users/chamikabanu/.m2/repository/jakarta/ws/rs/jakarta.ws.rs-api/3.1.0/jakarta.ws.rs-api-3.1.0.jar" className="org.apache.catalina.webresources.FileResourceSet" webAppMount="/WEB-INF/lib/jakarta.ws.rs-api-3.1.0.jar"/>
+    <PostResources base="/Users/chamikabanu/.m2/repository/org/glassfish/jersey/core/jersey-server/3.1.5/jersey-server-3.1.5.jar" className="org.apache.catalina.webresources.FileResourceSet" webAppMount="/WEB-INF/lib/jersey-server-3.1.5.jar"/>
+    <PostResources base="/Users/chamikabanu/.m2/repository/org/glassfish/jersey/core/jersey-client/3.1.5/jersey-client-3.1.5.jar" className="org.apache.catalina.webresources.FileResourceSet" webAppMount="/WEB-INF/lib/jersey-client-3.1.5.jar"/>
+    <PostResources base="/Users/chamikabanu/.m2/repository/jakarta/annotation/jakarta.annotation-api/2.1.1/jakarta.annotation-api-2.1.1.jar" className="org.apache.catalina.webresources.FileResourceSet" webAppMount="/WEB-INF/lib/jakarta.annotation-api-2.1.1.jar"/>
+    <PostResources base="/Users/chamikabanu/.m2/repository/jakarta/inject/jakarta.inject-api/2.0.1/jakarta.inject-api-2.0.1.jar" className="org.apache.catalina.webresources.FileResourceSet" webAppMount="/WEB-INF/lib/jakarta.inject-api-2.0.1.jar"/>
+    <PostResources base="/Users/chamikabanu/.m2/repository/jakarta/validation/jakarta.validation-api/3.0.2/jakarta.validation-api-3.0.2.jar" className="org.apache.catalina.webresources.FileResourceSet" webAppMount="/WEB-INF/lib/jakarta.validation-api-3.0.2.jar"/>
+    <PostResources base="/Users/chamikabanu/.m2/repository/org/glassfish/jersey/inject/jersey-hk2/3.1.5/jersey-hk2-3.1.5.jar" className="org.apache.catalina.webresources.FileResourceSet" webAppMount="/WEB-INF/lib/jersey-hk2-3.1.5.jar"/>
+    <PostResources base="/Users/chamikabanu/.m2/repository/org/glassfish/hk2/hk2-locator/3.0.5/hk2-locator-3.0.5.jar" className="org.apache.catalina.webresources.FileResourceSet" webAppMount="/WEB-INF/lib/hk2-locator-3.0.5.jar"/>
+    <PostResources base="/Users/chamikabanu/.m2/repository/org/glassfish/hk2/external/aopalliance-repackaged/3.0.5/aopalliance-repackaged-3.0.5.jar" className="org.apache.catalina.webresources.FileResourceSet" webAppMount="/WEB-INF/lib/aopalliance-repackaged-3.0.5.jar"/>
+    <PostResources base="/Users/chamikabanu/.m2/repository/org/glassfish/hk2/hk2-api/3.0.5/hk2-api-3.0.5.jar" className="org.apache.catalina.webresources.FileResourceSet" webAppMount="/WEB-INF/lib/hk2-api-3.0.5.jar"/>
+    <PostResources base="/Users/chamikabanu/.m2/repository/org/glassfish/hk2/hk2-utils/3.0.5/hk2-utils-3.0.5.jar" className="org.apache.catalina.webresources.FileResourceSet" webAppMount="/WEB-INF/lib/hk2-utils-3.0.5.jar"/>
+    <PostResources base="/Users/chamikabanu/.m2/repository/org/javassist/javassist/3.29.2-GA/javassist-3.29.2-GA.jar" className="org.apache.catalina.webresources.FileResourceSet" webAppMount="/WEB-INF/lib/javassist-3.29.2-GA.jar"/>
+  </Resources>
+</Context>
