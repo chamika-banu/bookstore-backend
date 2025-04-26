@@ -3,7 +3,7 @@ package org.bookstore;
 import org.bookstore.exception.CustomExceptionMapper;
 import org.bookstore.resource.*;
 import org.glassfish.jersey.server.ResourceConfig;
-import jakarta.ws.rs.ApplicationPath;
+import javax.ws.rs.ApplicationPath;
 
 @ApplicationPath("/api")  // This sets the base path for the API
 public class ApplicationConfig extends ResourceConfig {

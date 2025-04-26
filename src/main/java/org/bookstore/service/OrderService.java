@@ -63,7 +63,7 @@ public class OrderService {
 
         ordersByCustomer.computeIfAbsent(customerId, k -> new ArrayList<>()).add(newOrder);
 
-        // clear cart after ordering
+        // Clear cart after ordering
         cartService.getCart(customerId).clear();
 
         return newOrder;

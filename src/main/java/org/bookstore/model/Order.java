@@ -10,6 +10,13 @@ public class Order {
 
     public Order() {}
 
+    public Order(Long id, Long customerId, List<CartItem> items, double totalAmount) {
+        this.id = id;
+        this.customerId = customerId;
+        this.items = items;
+        this.totalAmount = totalAmount;
+    }
+
     public Long getId() {
         return id;
     }
@@ -39,13 +46,6 @@ public class Order {
     }
 
     public void setTotalAmount(double totalAmount) {
-        this.totalAmount = totalAmount;
-    }
-
-    public Order(Long id, Long customerId, List<CartItem> items, double totalAmount) {
-        this.id = id;
-        this.customerId = customerId;
-        this.items = items;
         this.totalAmount = totalAmount;
     }
 }

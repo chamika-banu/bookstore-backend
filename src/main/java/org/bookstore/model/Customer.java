@@ -1,7 +1,5 @@
 package org.bookstore.model;
 
-import org.bookstore.resource.CustomerResource;
-
 public class Customer {
     private Long id;
     private String name;

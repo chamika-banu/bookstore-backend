@@ -1,10 +1,7 @@
 package org.bookstore.service;
 
-import org.bookstore.exception.AuthorNotFoundException;
 import org.bookstore.exception.CustomerNotFoundException;
-import org.bookstore.exception.DuplicateAuthorException;
 import org.bookstore.exception.DuplicateCustomerException;
-import org.bookstore.model.Author;
 import org.bookstore.model.Customer;
 
 import java.util.ArrayList;

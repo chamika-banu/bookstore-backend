@@ -1,13 +1,13 @@
 package org.bookstore.resource;
 
-import jakarta.ws.rs.*;
-import jakarta.ws.rs.core.Response;
+import javax.ws.rs.*;
+import javax.ws.rs.core.Response;
 import org.bookstore.model.Author;
 import org.bookstore.model.Book;
 import org.bookstore.response.MessageResponse;
 import org.bookstore.service.AuthorService;
 
-import jakarta.ws.rs.core.MediaType;
+import javax.ws.rs.core.MediaType;
 
 import java.util.LinkedHashMap;
 import java.util.List;
