@@ -1,6 +1,9 @@
 package org.bookstore.service;
 
+import org.bookstore.exception.BookNotFoundException;
 import org.bookstore.exception.CartNotFoundException;
+import org.bookstore.exception.OutOfStockException;
+import org.bookstore.model.Book;
 import org.bookstore.model.CartItem;
 import org.bookstore.model.Order;
 
@@ -42,12 +45,15 @@ public class OrderService {
             int quantity = item.getQuantity();
 
             // Get book
-            var book = bookService.getAllBooks()
+            Book book = bookService.getAllBooks()
                     .stream()
                     .filter(b -> b.getId().equals(bookId))
                     .findFirst()
-                    .orElseThrow(() -> new RuntimeException("Book with ID " + bookId + " not found."));
+                    .orElseThrow(() -> new BookNotFoundException("Book with ID " + bookId + " not found."));
 
+            if (book.getStockQuantity() < quantity) {
+                throw new OutOfStockException("Not enough stock for book ID " + bookId);
+            }
             // Reduce stock
             book.setStockQuantity(book.getStockQuantity() - quantity);
 
@@ -64,7 +70,7 @@ public class OrderService {
         ordersByCustomer.computeIfAbsent(customerId, k -> new ArrayList<>()).add(newOrder);
 
         // Clear cart after ordering
-        cartService.getCart(customerId).clear();
+        cart.clear();
 
         return newOrder;
     }
