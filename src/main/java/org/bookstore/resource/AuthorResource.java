@@ -21,8 +21,13 @@ public class AuthorResource {
     private final AuthorService authorService = AuthorService.getInstance();
 
     @GET
-    public List<Author> getAllAuthors() {
-        return authorService.getAllAuthors();
+    public Response getAllAuthors() {
+        List<Author> authors = authorService.getAllAuthors();
+
+        Map<String, Object> response = new LinkedHashMap<>();
+        response.put("authors", authors);
+
+        return Response.ok(response).build();
     }
 
     @POST

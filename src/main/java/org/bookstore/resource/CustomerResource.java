@@ -4,6 +4,7 @@ import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import org.bookstore.model.Customer;
+import org.bookstore.response.ErrorResponse;
 import org.bookstore.response.MessageResponse;
 import org.bookstore.service.CustomerService;
 
@@ -18,8 +19,13 @@ public class CustomerResource {
     private final CustomerService customerService = CustomerService.getInstance();
 
     @GET
-    public List<Customer> getAllCustomer() {
-        return customerService.getAllCustomers();
+    public Response getAllCustomer() {
+        List<Customer> customers = customerService.getAllCustomers();
+
+        Map<String, Object> response = new LinkedHashMap<>();
+        response.put("customers", customers);
+
+        return Response.ok(response).build();
     }
 
     @POST
@@ -62,8 +68,8 @@ public class CustomerResource {
             MessageResponse message = new MessageResponse("Customer with the ID " + id + " removed successfully");
             return Response.ok(message).build();
         } else {
-            MessageResponse message = new MessageResponse("No customer found with the given ID.");
-            return Response.status(Response.Status.NOT_FOUND).entity(message).build();
+            ErrorResponse error = new ErrorResponse(404, "No customer found with the given ID.");
+            return Response.status(Response.Status.NOT_FOUND).entity(error).build();
         }
     }
 

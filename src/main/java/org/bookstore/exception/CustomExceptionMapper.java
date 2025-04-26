@@ -59,8 +59,8 @@ public class CustomExceptionMapper implements ExceptionMapper<Exception> {
         }
 
         if(exception instanceof CartNotFoundException) {
-            return Response.status(Response.Status.NOT_FOUND)
-                    .entity(new ErrorResponse(404, exception.getMessage()))
+            return Response.status(Response.Status.BAD_REQUEST)
+                    .entity(new ErrorResponse(400, exception.getMessage()))
                     .build();
         }
 

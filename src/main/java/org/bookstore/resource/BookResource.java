@@ -18,8 +18,13 @@ public class BookResource {
     private final BookService bookService = BookService.getInstance();
 
     @GET
-    public List<Book> getAllBooks() {
-        return bookService.getAllBooks();
+    public Response getAllBooks() {
+        List<Book> books = bookService.getAllBooks();
+
+        Map<String, Object> response = new LinkedHashMap<>();
+        response.put("books", books);
+
+        return Response.ok(response).build();
     }
 
     @GET

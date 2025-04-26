@@ -4,6 +4,7 @@ import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import org.bookstore.model.Order;
+import org.bookstore.response.ErrorResponse;
 import org.bookstore.service.OrderService;
 
 import java.util.HashMap;
@@ -34,7 +35,7 @@ public class OrderResource {
 
         Map<String, Object> response = new LinkedHashMap<>();
         if (orders.isEmpty()) {
-            response.put("message", "No orders found for customer.");
+            response.put("message", "This customer has not placed any orders yet.");
             return Response.ok(response).build();
         }
 
@@ -50,9 +51,9 @@ public class OrderResource {
         Map<String, Object> response = new LinkedHashMap<>();
 
         if (order == null) {
-            response.put("error", "No order for the given ID " + orderId + " was found for customer.");
+            ErrorResponse error = new ErrorResponse(404, "No order for the given ID was found for customer.");
             return Response.status(Response.Status.NOT_FOUND)
-                    .entity(response)
+                    .entity(error)
                     .build();
         }
 
